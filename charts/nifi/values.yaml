@@ -129,7 +129,7 @@ headless:
 
 # ui service
 service:
-  type: LoadBalancer
+  type: ClusterIP
   httpPort: 8080
   httpsPort: 9443
   nodePort: 30236
@@ -288,13 +288,13 @@ openshift:
 # The ca server will be used to generate self-signed certificates required setting up secured cluster
 ca:
   ## If true, enable the nifi-toolkit certificate authority
-  enabled: false
+  enabled: true
   persistence:
     enabled: true
   server: ""
   service:
     port: 9090
-  token: sixteenCharacters
+  token: hhbhjgjdhasbdajd
   admin:
     cn: admin
   serviceAccount:
@@ -314,7 +314,7 @@ zookeeper:
   ## If the Zookeeper Chart is disabled a URL and port are required to connect
   url: ""
   port: 2181
-  replicaCount: 3
+  replicaCount: 1
 
 # ------------------------------------------------------------------------------
 # Nifi registry:
